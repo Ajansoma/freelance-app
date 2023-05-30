@@ -24,7 +24,7 @@ const Menu = () => {
     setIsLoading(false);
   };
 
-  const style = `pt-6 gap-5 bg-white h-screen px-8 w-[16rem] origin-top animate-open-menu text-lg text-grey-200 lg:animate-none lg:text-base  lg:flex lg:items-center lg:bg-transparent lg:w-fit lg:h-fit lg:p-0 lg:text-primary-100`;
+  const style = `pt-6 gap-5 bg-white h-screen px-8 w-[16rem] origin-top animate-open-menu text-lg text-grey-200 lg:animate-none lg:text-base  lg:flex lg:items-center lg:bg-transparent lg:w-fit lg:h-fit lg:p-0 lg:text-primary-300`;
   return (
     <ul className={style}>
       <li className="mb-3 hover:scale-x-110 duration-300 cursor-pointer lg:mb-0">
@@ -60,7 +60,7 @@ const Menu = () => {
               alt="user picture"
               className="w-8 h-8 rounded-full"
             />
-            <span className="mb-3 hover:scale-x-110 duration-300 cursor-pointer">
+            <span className="mb-3 hover:scale-x-110 duration-300 cursor-pointer lg:mb-0">
               {currentUser?.username}
             </span>
           </div>

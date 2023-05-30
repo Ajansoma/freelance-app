@@ -38,7 +38,7 @@ const Navbar = () => {
   const activeStyle =
     isActive || pathname !== '/'
       ? 'justify-center items-center gap-96 pt-6 text-primary-100 border-b border-grey-200  duration-150 hidden lg:block lg:text-primary-300 lg:flex '
-      : 'justify-center items-center gap-96 pt-6 text-primary-100 border-primary-200 duration-150 bg-primary-200 hidden lg:block lg:flex';
+      : 'justify-center items-center gap-96 pt-6 text-primary-100 border-b border-grey-200  duration-150 bg-primary-200 hidden lg:block lg:flex';
   return (
     <div className="sticky top-0 z-50 bg-white">
       <motion.div
