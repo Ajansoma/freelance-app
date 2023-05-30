@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "BUILD_PATH=../server/dist vite build",
+    "build": " vite build",
     "preview": " vite preview --port 5000"
   },
   "dependencies": {
