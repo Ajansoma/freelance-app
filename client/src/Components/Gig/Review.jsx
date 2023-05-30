@@ -1,10 +1,9 @@
 import React from 'react';
-import noAvatar from '../../assets/noAvatar.jpeg';
+import noAvatar from '../../assets/noavatar.jpeg';
 import { user } from '../../lib/currentUsers';
 
 const Review = (props) => {
   const { gig, review } = props;
-  console.log(review);
   const currentUser = user();
   return (
     <div>

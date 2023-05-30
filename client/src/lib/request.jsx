@@ -1,4 +1,4 @@
-const API_URL = `https://freelance-app.onrender.com`;
+const API_URL = `http://localhost:5000`; //https://freelance-app.onrender.com
 
 export const httpSendData = async function (url, data) {
   const response = await fetch(`${API_URL}/${url}`, {

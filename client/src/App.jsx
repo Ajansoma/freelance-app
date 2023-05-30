@@ -35,7 +35,7 @@ function App() {
       element: <Layout />,
       children: [
         { path: '/', element: <Home /> },
-        { path: '/gigs/:cat', element: <Gigs /> },
+        { path: '/gigs', element: <Gigs /> },
         { path: '/gig/:id', element: <Gig /> },
         { path: '/mygigs', element: <MyGigsPage /> },
         { path: '/orders', element: <OrdersPage /> },
