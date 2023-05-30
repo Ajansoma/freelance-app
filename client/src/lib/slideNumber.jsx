@@ -14,7 +14,7 @@ export const slideNumber = (lg, md, sm, xs) => {
     return () => {
       window.removeEventListener('resize', updateWindowWidth);
     };
-  }, []);
+  }, [window.innerWidth]);
 
   useEffect(() => {
     if (windowWidth >= 1160) {
