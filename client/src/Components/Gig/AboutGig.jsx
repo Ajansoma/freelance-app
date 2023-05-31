@@ -36,11 +36,7 @@ const AboutGig = (props) => {
       </div>
       <div>
         <div className="flex justify-center">
-          <Slide
-            slidesToShow={1}
-            arrowsScroll={1}
-            className="w-[16rem] sm:w-[25rem]"
-          >
+          <Slide items={[1, 1, 1, 1, 1]} className="w-[16rem] sm:w-[25rem]">
             {gig.images.map((img) => (
               <img src={img} key={img} className="object-cover h-96 w-full" />
             ))}

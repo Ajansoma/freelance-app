@@ -2,15 +2,18 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import useWidth from '../../hooks/useWidth';
 import Menu from './Menu';
+import { user } from '../../lib/currentUsers';
 
 import { motion, useCycle } from 'framer-motion';
 import { MenuToggle } from '../../UI/MenuToggle';
+import User from './User';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const { windowWidth } = useWidth();
   const { pathname } = useLocation();
+  const currentUser = user();
 
   const scrollActive = function () {
     (window.scrollY > 0 && windowWidth >= 1024) ||
@@ -37,8 +40,8 @@ const Navbar = () => {
 
   const activeStyle =
     isActive || pathname !== '/'
-      ? 'justify-center items-center gap-96 pt-6 text-primary-100 border-b border-grey-200  duration-150 hidden lg:block lg:text-primary-300 lg:flex '
-      : 'justify-center items-center gap-96 pt-6 text-primary-100 border-b border-grey-200  duration-150 bg-primary-200 hidden lg:block lg:flex';
+      ? 'justify-center items-center gap-96 pt-6  border-b border-grey-100  duration-150 hidden lg:block lg:flex text-primary-300'
+      : 'justify-center items-center gap-96 pt-6  border-primary-100 duration-150 bg-primary-200 hidden lg:block lg:flex text-primary-100';
   return (
     <div className="sticky top-0 z-50 bg-white">
       <motion.div
@@ -54,12 +57,19 @@ const Navbar = () => {
           </div>
 
           {logo}
-          <Link
-            to="/signup"
-            className="bg-primary-300 pl-4 pr-4 text-primary-200 rounded hover:bg-primary-100 duration-700 text-lg"
-          >
-            Join
-          </Link>
+          {Object.keys(currentUser || {}).length === 0 && (
+            <Link
+              to="/signup"
+              className="bg-primary-300 pl-4 pr-4 text-primary-200 rounded hover:bg-primary-100 duration-700 text-lg"
+            >
+              Join
+            </Link>
+          )}
+          {Object.keys(currentUser || {}).length > 0 && (
+            <div className="text-lg">
+              <User />
+            </div>
+          )}
         </div>
         {isOpen && <Menu />}
       </motion.div>

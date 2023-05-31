@@ -10,11 +10,12 @@ export const slideNumber = (lg, md, sm, xs) => {
 
   useEffect(() => {
     window.addEventListener('resize', updateWindowWidth);
+    window.addEventListener('touchmove', updateWindowWidth, { passive: true });
 
     return () => {
       window.removeEventListener('resize', updateWindowWidth);
     };
-  }, [window.innerWidth]);
+  }, [updateWindowWidth]);
 
   useEffect(() => {
     if (windowWidth >= 1160) {
